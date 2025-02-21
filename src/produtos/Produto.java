@@ -10,8 +10,11 @@ public abstract class Produto {
         this.nome = nome;
         this.preco = preco;
     }
+    public double calcularPrecoComImposto() {
+        return preco * 1.08;
+    }
 
     public String obterDados(){
-        return String.format("ID: %d | Nome: %s | Preço Original: %.2f", this.id, this.nome, this.preco);
+        return String.format("ID: %d | Nome: %s | Preço Original: %.2f | Preço com Imposto: %.2f", this.id, this.nome, this.preco, this.calcularPrecoComImposto());
     }
 }
